@@ -9,7 +9,7 @@ SPRING_PROFILES_ACTIVE=postgres POSTGRES_URL=jdbc:postgresql://{IP_ADD_POD}:5432
 #####################################
 # nginx ingress security sample for openshift ####
 add application create nginx builder image
-set the application code from https://github.com/ITG-jnadlaon/nginx-security-sample
+set the application code from https://github.com/tkmru/nginx-http-splitting-sample
 create route then access and checks the vulnerability
 check and confirm in the pods events
 #####################################
