@@ -1,7 +1,9 @@
+# petclinic with postgresql #########
 pull image from quay.io/enterprisedb/postgresql:15
 env variables for postgresql 
 POSTGRES_USER=petclinic POSTGRES_PASSWORD=petclinic POSTGRES_DATABASE=petclinic
 create PVC = mount claim,RWO,1GB,/var/lib/pgdata
 pull image from https://gitlab.com/nicholson.adlaon/spring-petclinic-edb-postgres
 set env for petclinic
-SPRING_PROFILES_ACTIVE=postgres POSTGRES_URL=jdbc:postgresql://postgres:5432/petclinic
+SPRING_PROFILES_ACTIVE=postgres POSTGRES_URL=jdbc:postgresql://{IP_ADD_POD}:5432/petclinic
+#####################################
