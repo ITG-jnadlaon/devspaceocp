@@ -1,4 +1,4 @@
-# petclinic with postgresql #########
+# openshift node.js application with postgresql database push via CI/CD gitlab #########
 pull image from quay.io/enterprisedb/postgresql:15
 env variables for postgresql 
 POSTGRES_USER=petclinic POSTGRES_PASSWORD=petclinic POSTGRES_DATABASE=petclinic
@@ -6,4 +6,10 @@ create PVC = mount claim,RWO,1GB,/var/lib/pgdata
 pull image from https://gitlab.com/nicholson.adlaon/spring-petclinic-edb-postgres
 set env for petclinic
 SPRING_PROFILES_ACTIVE=postgres POSTGRES_URL=jdbc:postgresql://{IP_ADD_POD}:5432/petclinic
+#####################################
+# nginx ingress security sample for openshift ####
+add application create nginx builder image
+set the application code from https://github.com/ITG-jnadlaon/nginx-security-sample
+create route then access and checks the vulnerability
+check and confirm in the pods events
 #####################################
