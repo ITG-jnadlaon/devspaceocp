@@ -14,3 +14,4 @@ create route then access and checks the vulnerability
 check and confirm in the pods events
 #####################################
 # nginx sample reverse proxy on ocp devspace
+create configmap file for nginx.conf
