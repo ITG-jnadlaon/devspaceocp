@@ -15,3 +15,6 @@ check and confirm in the pods events
 #####################################
 # nginx sample reverse proxy on ocp devspace
 create configmap file for nginx.conf
+pull image from https://quay.io/repository/nginx/nginx-unprivileged
+edit deployment to attach volume and volume mountpoints
+####################################
