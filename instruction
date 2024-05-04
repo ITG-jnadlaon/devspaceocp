@@ -18,3 +18,11 @@ create configmap file for nginx.conf
 pull image from https://quay.io/repository/nginx/nginx-unprivileged
 edit deployment to attach volume and volume mountpoints
 ####################################
+# nginx_plus own image registry
+podman login private-registry.nginx.com --username=<output_of_jwt_token> --password=none
+podman pull private-registry.nginx.com/nginx-plus/base:<version-tag>
+podman pull private-registry.nginx.com/nginx-plus/rootless-base:<version-tag> #non-root
+podman pull private-registry.nginx.com/nginx-plus/rootless-base:<version-tag>
+podman tag private-registry.nginx.com/nginx-plus/rootless-agent:nginx-plus-r31-ubi-9 quay.io/nicholson_adlaon/nginx-plus/rootless-agent:nginx-plus-r31-ubi-9
+podman pull quay.io/nicholson_adlaon/nginx-plus/rootless-agent
+#####################################
