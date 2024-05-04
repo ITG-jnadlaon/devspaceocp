@@ -26,3 +26,14 @@ podman pull private-registry.nginx.com/nginx-plus/rootless-base:<version-tag>
 podman tag private-registry.nginx.com/nginx-plus/rootless-agent:nginx-plus-r31-ubi-9 quay.io/nicholson_adlaon/nginx-plus/rootless-agent:nginx-plus-r31-ubi-9
 podman pull quay.io/nicholson_adlaon/nginx-plus/rootless-agent
 #####################################
+# create vm on openshift devspace
+go to openshift administrator console
+go to virtualization
+create from template
+create VirtualMachine name
+edit storage and disk source PVC
+from PVC project and select openshift-virtualization-os-image
+select desire PVC based on virtualization-OS
+create virtualmachine
+######################################
+
