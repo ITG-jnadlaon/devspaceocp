@@ -36,4 +36,12 @@ from PVC project and select openshift-virtualization-os-image
 select desire PVC based on virtualization-OS
 create virtualmachine
 ######################################
+# Configuring the registry for bare metal
+# https://docs.openshift.com/container-platform/4.16/registry/configuring_registry_storage/configuring-registry-storage-baremetal.html
+# backup openshift local image
+oc get -o yaml configs.imageregistry.operator.openshift.io cluster > image.yaml
+# patch openshift image
+oc patch config.imageregistry.operator.openshift.io/cluster --type=merge -p '{"spec":{"rolloutStrategy":"Recreate","replicas":1}}'
+# verify your bare metal coreos storage registry pod
+oc get pod -n openshift-image-registry -l docker-registry=default
 
