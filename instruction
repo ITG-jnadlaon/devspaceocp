@@ -44,4 +44,9 @@ oc get -o yaml configs.imageregistry.operator.openshift.io cluster > image.yaml
 oc patch config.imageregistry.operator.openshift.io/cluster --type=merge -p '{"spec":{"rolloutStrategy":"Recreate","replicas":1}}'
 # verify your bare metal coreos storage registry pod
 oc get pod -n openshift-image-registry -l docker-registry=default
+#######################################
+# Create oracle enterprise database on docker
+podman login container-registry.oracle.com
+podman pull container-registry.oracle.com/database/enterprise:21.3.0.0
+podman run -d --name oracledb -p 1521:1521 -p 5500:5500 -v /var/container:/opt/oracle/oradata
 
