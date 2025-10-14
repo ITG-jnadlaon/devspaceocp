@@ -50,3 +50,19 @@ podman login container-registry.oracle.com
 podman pull container-registry.oracle.com/database/enterprise:21.3.0.0
 podman run -d --name oracledb -p 1521:1521 -p 5500:5500
 
+SQL> alter session set container = XEPDB1;
+
+SQL> CREATE USER keycloak IDENTIFIED BY keycloak_password;
+
+SQL> CREATE USER keycloak IDENTIFIED BY keycloak_password
+
+SQL> GRANT CONNECT, RESOURCE TO keycloak;
+
+SQL> GRANT UNLIMITED TABLESPACE TO keycloak;
+
+SQL> GRANT CREATE SESSION TO keycloak;
+
+SQL> GRANT CREATE TABLE, CREATE SEQUENCE TO keycloak;
+
+SQL> ALTER USER keycloak QUOTA UNLIMITED ON users;
+
